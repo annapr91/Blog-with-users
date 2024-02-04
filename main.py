@@ -53,6 +53,7 @@ def load_user(user_id):
 class Base(DeclarativeBase):
     pass
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
+app.config['POSTGRES_DATABASE_URL'] = os.environ.get('POSTGRES_DATABASE_URL')
 
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
